@@ -17,6 +17,9 @@ See also: [react-mobx-typescript-boilerplate](https://github.com/rokoroku/react-
 - [x] [React](https://facebook.github.io/react/) 16.8
 - [x] [Redux](https://github.com/reactjs/redux) 4
 - [x] [React Router](https://github.com/ReactTraining/react-router) 4.3
+- [x] [Sass css precompiler](https://github.com/sass/sass) 4.11
+- [x] [Eslint](https://github.com/eslint/eslint) 5.15
+- [x] [Jest](https://github.com/facebook/jest) 24.3
 - [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
 - [x] [TodoMVC example](http://todomvc.com)
 
