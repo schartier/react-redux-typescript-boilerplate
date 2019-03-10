@@ -1,15 +1,17 @@
 {
   "name": "react-redux-typescript-boilerplate",
   "version": "1.0.1",
-  "private": true,
+  "private": false,
   "description": "A frontend boilerplate with React, Redux and Typescript",
-  "homepage": "https://rokoroku.github.io/react-redux-typescript-boilerplate",
+  "homepage": "https://github.com/schartier/react-redux-typescript-boilerplate",
   "keywords": [
     "react",
     "redux",
     "typescript",
     "boilerplate",
-    "todomvc"
+    "jest",
+    "eslint",
+    "sass"
   ],
   "main": "index.js",
   "scripts": {
@@ -18,11 +20,10 @@
     "test": "jest",
     "start": "webpack-dev-server --mode development --hot --progress --color --port 3000 --open",
     "build": "webpack -p --progress --colors",
-    "eslint": "eslint '*/**/*.{js,ts}' --quiet --fix",
+    "eslint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "lint": "npm run eslint && tsc --noEmit",
-    "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\""
+    "prettier": "prettier --write \"src/**/*.{ts,tsx,css,scss}\""
   },
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@types/classnames": "^2.2.7",
@@ -50,6 +51,7 @@
     "gh-pages": "^2.0.1",
     "html-loader": "^1.0.0-alpha.0",
     "html-webpack-plugin": "^4.0.0-alpha",
+    "husky": "^1.3.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.3.1",
     "mini-css-extract-plugin": "^0.5.0",
@@ -62,6 +64,7 @@
     "postcss-reporter": "^6.0.1",
     "postcss-url": "^8.0.0",
     "prettier": "^1.16.4",
+    "prettier-loader": "^2.1.1",
     "react-hot-loader": "^4.6.3",
     "redux-devtools-extension": "^2.13.7",
     "sass-loader": "^7.1.0",
@@ -83,5 +86,11 @@
     "react-router": "^4.3.1",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run-script eslint",
+      "pre-push": "npm run-script test"
+    }
   }
 }
