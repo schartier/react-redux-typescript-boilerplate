@@ -14,10 +14,10 @@ beforeEach(() => {
       {
         id: 1,
         text: 'Use Redux',
-        completed: false
-      }
-    ]
-  }
+        completed: false,
+      },
+    ],
+  };
 });
 
 describe('App container', () => {
@@ -28,7 +28,7 @@ describe('App container', () => {
         const componentState = mapStateToProps(rootState, componentProps);
 
         expect(componentState.todos).toEqual(rootState.todos);
-      })
+      });
     });
-  })
+  });
 });

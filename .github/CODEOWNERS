@@ -1,3 +1,0 @@
-# Set the code owners to all backend by default
-# When creating a new service please restrict the code owners to the name of the maintainers of the service.
-*       @rjacquemin @SimonDrouin @GuillaumeSalles @schartier
