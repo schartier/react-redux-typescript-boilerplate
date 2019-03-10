@@ -3,7 +3,7 @@
 // import * as React from 'react';
 // import * as ReactDOM from 'react-dom';
 // import * as TestUtils from 'react-dom/test-utils';
-import { App, mapStateToProps } from '../src/app/containers/App';
+import { Todo, mapStateToProps } from '../src/app/containers/Todo';
 import { RootState } from '../src/app/reducers';
 
 let rootState: RootState;
@@ -20,11 +20,11 @@ beforeEach(() => {
   };
 });
 
-describe('App container', () => {
+describe('Todo container', () => {
   describe('the container element', () => {
     describe('mapStateToProps', () => {
       it('should map the state to props correctly', () => {
-        const componentProps = {} as App.Props;
+        const componentProps = {} as Todo.Props;
         const componentState = mapStateToProps(rootState, componentProps);
 
         expect(componentState.todos).toEqual(rootState.todos);
