@@ -6,7 +6,7 @@ import { TodoModel } from '../../models';
 export const FILTER_TITLES = {
   [TodoModel.Filter.SHOW_ALL]: 'All',
   [TodoModel.Filter.SHOW_ACTIVE]: 'Active',
-  [TodoModel.Filter.SHOW_COMPLETED]: 'Completed'
+  [TodoModel.Filter.SHOW_COMPLETED]: 'Completed',
 };
 
 export namespace Footer {
@@ -22,7 +22,7 @@ export namespace Footer {
 export class Footer extends React.Component<Footer.Props> {
   static defaultProps: Partial<Footer.Props> = {
     activeCount: 0,
-    completedCount: 0
+    completedCount: 0,
   };
 
   renderTodoCount(): JSX.Element {
@@ -52,13 +52,7 @@ export class Footer extends React.Component<Footer.Props> {
   renderClearButton(): JSX.Element | void {
     const { completedCount, onClickClearCompleted } = this.props;
     if (completedCount! > 0) {
-      return (
-        <button
-          className={style.clearCompleted}
-          onClick={onClickClearCompleted}
-          children={'Clear completed'}
-        />
-      );
+      return <button className={style.clearCompleted} onClick={onClickClearCompleted} children={'Clear completed'} />;
     }
   }
 
@@ -67,7 +61,7 @@ export class Footer extends React.Component<Footer.Props> {
       <footer className={style.normal}>
         {this.renderTodoCount()}
         <ul className={style.filters}>
-          {(Object.keys(TodoModel.Filter) as (keyof typeof TodoModel.Filter)[]).map((key) => (
+          {(Object.keys(TodoModel.Filter) as (keyof typeof TodoModel.Filter)[]).map(key => (
             <li key={key} children={this.renderFilterLink(TodoModel.Filter[key])} />
           ))}
         </ul>

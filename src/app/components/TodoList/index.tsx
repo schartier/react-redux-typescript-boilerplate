@@ -15,14 +15,9 @@ export class TodoList extends React.Component<TodoList.Props> {
   renderToggleAll(): JSX.Element | void {
     const { todos, actions } = this.props;
     if (todos.length > 0) {
-      const hasIncompleted = todos.some((todo) => !todo.completed);
+      const hasIncompleted = todos.some(todo => !todo.completed);
       return (
-        <input
-          className={style.toggleAll}
-          type="checkbox"
-          checked={hasIncompleted}
-          onChange={actions.completeAll}
-        />
+        <input className={style.toggleAll} type="checkbox" checked={hasIncompleted} onChange={actions.completeAll} />
       );
     }
   }
@@ -33,7 +28,7 @@ export class TodoList extends React.Component<TodoList.Props> {
       <section className={style.main}>
         {this.renderToggleAll()}
         <ul className={style.normal}>
-          {todos.map((todo) => (
+          {todos.map(todo => (
             <TodoItem
               key={todo.id}
               todo={todo}
