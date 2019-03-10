@@ -15,7 +15,7 @@ declare module 'react-redux' {
       mapStateToProps: MapStateToPropsParam<TStateProps, TOwnProps, State>,
       mapDispatchToProps?: MapDispatchToPropsParam<TDispatchProps, TOwnProps>,
       mergeProps?: MergeProps<TStateProps, TDispatchProps, TOwnProps, TMergedProps>,
-      options?: Options
+      options?: Options,
     ): InferableComponentDecorator<TOwnProps>;
   }
 }

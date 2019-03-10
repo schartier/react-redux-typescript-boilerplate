@@ -46,7 +46,7 @@ export class TodoItem extends React.Component<TodoItem.Props, TodoItem.State> {
         <TodoTextInput
           text={todo.text}
           editing={this.state.editing}
-          onSave={(text) => todo.id && this.handleSave(todo.id, text)}
+          onSave={text => todo.id && this.handleSave(todo.id, text)}
         />
       );
     } else {
@@ -62,7 +62,9 @@ export class TodoItem extends React.Component<TodoItem.Props, TodoItem.State> {
           <button
             className={style.destroy}
             onClick={() => {
-              if (todo.id) deleteTodo(todo.id);
+              if (todo.id) {
+                deleteTodo(todo.id);
+              }
             }}
           />
         </div>
@@ -73,7 +75,7 @@ export class TodoItem extends React.Component<TodoItem.Props, TodoItem.State> {
     const classes = classNames({
       [style.completed]: todo.completed,
       [style.editing]: this.state.editing,
-      [style.normal]: !this.state.editing
+      [style.normal]: !this.state.editing,
     });
 
     return <li className={classes}>{element}</li>;
